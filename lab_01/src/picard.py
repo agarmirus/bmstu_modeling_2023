@@ -7,11 +7,11 @@ def snd_picard_1(x: float) -> float:
 
 
 def thd_picard_1(x: float) -> float:
-    return x ** 5 / 60 + x ** 4 / 12 + x ** 3 / 2 + x * x / 2 + x + 1
+    return x ** 5 / 60 + x ** 4 / 48 + x ** 3 / 2 + x * x / 2 + x + 1
 
 
 def frth_picard_1(x: float) -> float:
-    return x ** 6 / 360 + x ** 5 / 60 + x ** 4 / 8 + x ** 3 / 2 + x * x / 2 + x + 1
+    return x ** 6 / 360 + x ** 5 / 240 + x ** 4 / 8 + x ** 3 / 2 + x * x / 2 + x + 1
 
 
 def fst_picard_2(x: float) -> float:
@@ -39,9 +39,9 @@ def snd_picard_3(x: float) -> float:
 
 
 def thd_picard_3(x: float) -> float:
-    return x ** 7 / 63 + x ** 3 / 3 + x ** 15 / 59535
+    return x ** 15 / 59535 + 2 * x ** 11 / 2079 + x ** 7 / 63 + x ** 3 / 3
 
 
 def frth_picard_3(x: float) -> float:
-    return x ** 7 / 63 + x ** 3 / 3 + x ** 15 / 59535 + x ** 31 / 59535 ** 2 / 31 + \
-    2 * x ** 11 / 2079 + 2 * x ** 19 / 3393495 + 2 * x ** 23 / 86266215
+    return x ** 31 / 109876902975 + 4 * x ** 27 / 3341878155 + 4 * x ** 23 / 10438212015 + 82 * x ** 19 / 37328445 + \
+    13 * x ** 15 / 218295 + 2 * x ** 11 / 2079 + x ** 7 / 63 + x ** 3 / 3

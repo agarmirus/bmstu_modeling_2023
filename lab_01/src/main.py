@@ -11,6 +11,7 @@ def perform_task_1(e: float, step: float):
             "Аргумент", "Аналит.", "Эйлер", "1 приб. П.", "2 приб. П.", "3 приб. П.", "4 приб. П."
         )
     )
+    print('-' * (16 * 7 + 1))
 
     prev_x = 0.0
     prev_y = 1.0
@@ -19,7 +20,7 @@ def perform_task_1(e: float, step: float):
         euler_y = euler_1(prev_y, prev_x, step)
 
         print(
-            "|{:^15.3f}|{:^15.3f}|{:^15.3f}|{:^15.3f}|{:^15.3f}|{:^15.3f}|{:^15.3f}|".format(
+            "|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|".format(
                 i,
                 analit_1(i),
                 euler_y,
@@ -44,6 +45,7 @@ def perform_task_2(e: float, step: float):
             "Аргумент", "Аналит.", "Эйлер", "1 приб. П.", "2 приб. П.", "3 приб. П.", "4 приб. П."
         )
     )
+    print('-' * (16 * 7 + 1))
 
     prev_x = 0.0
     prev_y = 0.5
@@ -52,7 +54,7 @@ def perform_task_2(e: float, step: float):
         euler_y = euler_2(prev_y, prev_x, step)
 
         print(
-            "|{:^15.3f}|{:^15.3f}|{:^15.3f}|{:^15.3f}|{:^15.3f}|{:^15.3f}|{:^15.3f}|".format(
+            "|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|".format(
                 i,
                 analit_2(i),
                 euler_y,
@@ -71,12 +73,13 @@ def perform_task_2(e: float, step: float):
 
 
 def perform_task_3(e: float, step: float):
-    print("Задание 2")
+    print("Задание 3")
     print(
         "|{:^15}|{:^15}|{:^15}|{:^15}|{:^15}|{:^15}|".format(
             "Аргумент", "Эйлер", "1 приб. П.", "2 приб. П.", "3 приб. П.", "4 приб. П."
         )
     )
+    print('-' * (16 * 6 + 1))
 
     prev_x = 0.0
     prev_y = 0.0
@@ -85,7 +88,7 @@ def perform_task_3(e: float, step: float):
         euler_y = euler_3(prev_y, prev_x, step)
 
         print(
-            "|{:^15.3f}|{:^15.3f}|{:^15.3f}|{:^15.3f}|{:^15.3f}|{:^15.3f}|".format(
+            "|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|".format(
                 i,
                 euler_y,
                 fst_picard_3(i),
@@ -104,7 +107,7 @@ def perform_task_3(e: float, step: float):
 
 def main():
     e = float(input("Верхняя граница интервала: "))
-    step = int(input("Количество шагов: "))
+    step = float(input("Размер шага: "))
 
     perform_task_1(e, step)
     perform_task_2(e, step)
