@@ -15,25 +15,24 @@ def perform_task_1(e: float, step: float):
 
     prev_x = 0.0
     prev_y = 1.0
-    i = 0.0
-    while i < e + step:
+
+    while prev_x < e:
         euler_y = euler_1(prev_y, prev_x, step)
 
         print(
             "|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|".format(
-                i,
-                analit_1(i),
+                prev_x,
+                analit_1(prev_x),
                 euler_y,
-                fst_picard_1(i),
-                snd_picard_1(i),
-                thd_picard_1(i),
-                frth_picard_1(i)
+                fst_picard_1(prev_x),
+                snd_picard_1(prev_x),
+                thd_picard_1(prev_x),
+                frth_picard_1(prev_x)
             )
         )
 
         prev_y = euler_y
-        prev_x = i
-        i += step
+        prev_x += step
 
     print()
 
@@ -49,25 +48,24 @@ def perform_task_2(e: float, step: float):
 
     prev_x = 0.0
     prev_y = 0.5
-    i = 0.0
-    while i < e + step:
+
+    while prev_x < e:
         euler_y = euler_2(prev_y, prev_x, step)
 
         print(
             "|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|".format(
-                i,
-                analit_2(i),
+                prev_x,
+                analit_2(prev_x),
                 euler_y,
-                fst_picard_2(i),
-                snd_picard_2(i),
-                thd_picard_2(i),
-                frth_picard_2(i)
+                fst_picard_2(prev_x),
+                snd_picard_2(prev_x),
+                thd_picard_2(prev_x),
+                frth_picard_2(prev_x)
             )
         )
 
         prev_y = euler_y
-        prev_x = i
-        i += step
+        prev_x += step
         
     print()
 
@@ -83,24 +81,23 @@ def perform_task_3(e: float, step: float):
 
     prev_x = 0.0
     prev_y = 0.0
-    i = 0.0
-    while i < e + step:
-        euler_y = euler_3(prev_y, prev_x, step)
+
+    while prev_x < e:
+        euler_y = prev_y + step * (prev_x ** 2 + prev_y ** 2)
 
         print(
-            "|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|{:^15.3e}|".format(
-                i,
+            "|{:^15.6e}|{:^15.6e}|{:^15.6e}|{:^15.6e}|{:^15.6e}|{:^15.6e}|".format(
+                prev_x,
                 euler_y,
-                fst_picard_3(i),
-                snd_picard_3(i),
-                thd_picard_3(i),
-                frth_picard_3(i)
+                fst_picard_3(prev_x),
+                snd_picard_3(prev_x),
+                thd_picard_3(prev_x),
+                frth_picard_3(prev_x)
             )
         )
 
         prev_y = euler_y
-        prev_x = i
-        i += step
+        prev_x += step
         
     print()
 
@@ -109,8 +106,8 @@ def main():
     e = float(input("Верхняя граница интервала: "))
     step = float(input("Размер шага: "))
 
-    perform_task_1(e, step)
-    perform_task_2(e, step)
+    # perform_task_1(e, step)
+    # perform_task_2(e, step)
     perform_task_3(e, step)
 
 
